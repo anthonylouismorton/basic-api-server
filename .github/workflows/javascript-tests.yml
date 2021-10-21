@@ -16,6 +16,7 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
+        credentials: ${{secrets.DATABASE_URL}}
         node-version: ${{ matrix.node-version }}
     - name: npm install, build, and test
       run: |
@@ -23,3 +24,4 @@ jobs:
         npm test
       env:
         CI: true
+        credentials: ${{secrets.DATABASE_URL}}
