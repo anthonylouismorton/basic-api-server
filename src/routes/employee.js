@@ -8,7 +8,7 @@ const validator = require('../middleware/validator.js');
 
 router.get('/employee', async (req, res) => {
   let employeeData = await Employees.findAll();
-  res.send(employeeData);
+  res.json(employeeData);
  });
 
 router.get('/employee/:id', async (req, res) => {
@@ -17,14 +17,14 @@ router.get('/employee/:id', async (req, res) => {
   res.send(employeeData);
 });
 
-router.post('/employee', validator, async (req, res) => {
+router.post('/employee', async (req, res) => {
   const employeeInfo = req.body
   const newEmployee = await Employees.create({
     title: employeeInfo.title,
     firstName: employeeInfo.firstName,
     lastName: employeeInfo.lastName
   })
-  res.status(201).send(newEmployee)
+  res.status(201).json(newEmployee)
 });
 
 router.put('/employee/:id', async (req,res) => {
@@ -33,7 +33,7 @@ router.put('/employee/:id', async (req,res) => {
   let updatedEmployee = await foundEmployee.update(
     req.body
   )
-  res.status(200).send(updatedEmployee)
+  res.status(200).json(updatedEmployee)
 });
 
 router.delete('/employee/:id', async (req, res) => {
