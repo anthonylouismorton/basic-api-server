@@ -3,18 +3,19 @@
 Created by Anthony Morton
 
 ## Installation
-Express, jest, dotenv, supertest, nodemon
+Express, jest, dotenv, supertest, nodemon, pg, sequelize, sequelize-cli, sqlite3
 
 ## Summary of Problem Domain
-Testing /person route
+Testing /location and employee route. Testing Get, Put, Post, Delete from database
 
 ## Links to application deployment
-person: https://anthonymo-basic-express-server.herokuapp.com/person
-pull request: https://github.com/anthonylouismorton/basic-express-server/pull/1
-actions: https://github.com/anthonylouismorton/basic-express-server/actions
+Location: https://anthonymorton-basic-api-server.herokuapp.com/location
+Employee: https://anthonymorton-basic-api-server.herokuapp.com/employee
+pull request: https://github.com/anthonylouismorton/basic-api-server/pull/1
+actions: https://github.com/anthonylouismorton/basic-api-server/actions
 
 ## Include embedded UML
-![uml](./basicserver.png)
+![uml](./lab3diagram.png)
 
 ## Talk about your routes
 
