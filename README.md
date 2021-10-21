@@ -22,7 +22,36 @@ actions: https://github.com/anthonylouismorton/basic-api-server/actions
 ## Routes
 
 * HTTP GET
-  * Path: /Person
-    * responds with name object `/person`.
+  * Path: /Employee
+    * responds with employee object
+
+* HTTP POST
+  * Path: /Employee
+    * Adds employee to db
+
+* HTTP PUT
+  * Path: /Employee
+    * Updates employee in db
+
+* HTTP DELETE
+  * Path: /Employee
+    * Deletes employee in db
+
+
+* HTTP GET
+  * Path: /Location
+    * responds with location object
+
+* HTTP POST
+  * Path: /Location
+    * Adds Location to db
+
+* HTTP PUT
+  * Path: /Employee
+    * Updates Location in db
+
+* HTTP DELETE
+  * Path: /Employee
+    * Deletes Location in db
 
 
