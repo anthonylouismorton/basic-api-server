@@ -8,32 +8,31 @@ const validator = require('../middleware/validator.js');
 
 router.get('/location', async (req, res) => {
   let locationData = await Locations.findAll();
-  res.send(locationData);
+  res.json(locationData);
  });
 
 router.get('/location/:id', async (req, res) => {
   const id = +req.params.id;
-  let locationData = await Locations.findOne(id);
+  let locationData = await Locations.findOne({where: {id}});
   res.send(locationData);
 });
 
 router.post('/location', async (req, res) => {
   const locationInfo = req.body
   const newLocation = await Locations.create({
-    title: locationInfo.title,
-    firstName: locationInfo.firstName,
-    lastName: locationInfo.lastName
+    city: locationInfo.city,
+    manager: locationInfo.manager,
   })
-  res.status(201).send(newLocation)
+  res.status(201).json(newLocation)
 });
 
 router.put('/location/:id', async (req,res) => {
   const id = +req.params.id
-  let foundLocation = await findOne({where: {id}})
+  let foundLocation = await Locations.findOne({where: {id}})
   let updatedLocation = await foundLocation.update(
     req.body
   )
-  res.status(200).send(updatedLocation)
+  res.status(200).json(updatedLocation)
 
 });
 
