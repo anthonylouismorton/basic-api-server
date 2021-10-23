@@ -4,7 +4,7 @@ const {Sequelize, DataTypes} = require('sequelize');
 const EmployeeModel = require('./Employee.js');
 const LocationModel = require('./Location.js');
 
-let DATABASE_URL = process.env.DATABASE_URL
+let DATABASE_URL = process.env.DATABASE_URL || 'sqlite:memory'
 
 const options = process.env.NODE_ENV === 'production'
   ? {
